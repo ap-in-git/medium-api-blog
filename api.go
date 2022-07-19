@@ -57,6 +57,7 @@ func (service *FacebookApiService) GetUserDetails() (*FacebookProfileResponse, *
 		if err != nil {
 			return nil, nil, err
 		}
+		facebookApiError.StatusCode = resp.StatusCode
 		//Return the api error that we got from facebook
 		return nil, &facebookApiError, err
 	}
